@@ -7,7 +7,10 @@ from textwrap import dedent
 import streamlit as st
 
 BASE_DIR = Path(__file__).resolve().parent
+# Support both the recommended assets/ folder and a flat GitHub upload.
 ASSETS = BASE_DIR / "assets"
+if not ASSETS.exists():
+    ASSETS = BASE_DIR
 
 st.set_page_config(
     page_title="Abraham Gizaw General Construction | AGGC",
